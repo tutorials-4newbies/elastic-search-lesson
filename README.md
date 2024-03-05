@@ -16,4 +16,3 @@ Documentation - https://www.elastic.co/guide/en/elasticsearch/reference/current/
    ```
 3. Check that elasticsearch is running:
     * http://127.0.0.1:9200/
-    * Try to log in, good luck finding the credentials!
