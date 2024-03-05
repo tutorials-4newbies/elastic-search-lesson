@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  elasticsearch:
+    container_name: elasticsearch_lesson
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.12.2
+    hostname: elasticsearch
+    environment:
+      - ELASTIC_USERNAME=elastic
+      - ELASTIC_PASSWORD=12345
+      - xpack.security.enabled=false
+      - discovery.type=single-node
+      - xpack.security.http.ssl.enabled=false
+      - xpack.license.self_generated.type=trial
+    ports:
+      - "9200:9200"

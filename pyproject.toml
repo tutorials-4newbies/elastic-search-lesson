@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "elastic-search-lesson"
+version = "1"
+description = ""
+authors = ["Alon Palgy <a.palgy@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+elasticsearch = "^8.12.1"
+faker = "^23.3.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
