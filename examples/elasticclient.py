@@ -32,4 +32,5 @@ class ElasticClient:
         return self.elastic_client.get(index=index_name, id=document_id)
 
     def search(self, index_name: str, query_args):
+        # https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html
         return self.elastic_client.search(index=index_name, **query_args)
