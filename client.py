@@ -1,5 +1,5 @@
 from pprint import pprint
-from elasticsearch import Elasticsearch
+from elasticsearch import Elasticsearch, BadRequestError
 
 
 class ElasticClient:
@@ -9,8 +9,10 @@ class ElasticClient:
         pprint(client_info.body)
 
     def create_index(self, index_name: str, mappings: dict):
-        self.elastic_client.indices.delete(index=index_name, ignore_unavailable=True)
-        self.elastic_client.indices.create(index=index_name, mappings=mappings)
+        try:
+            self.elastic_client.indices.create(index=index_name, mappings=mappings)
+        except BadRequestError:
+            print(f"'{index_name}' already exists, skipping creation")
 
     def insert_document(self, index_name: str, document: dict):
         return self.elastic_client.index(index=index_name, body=document)

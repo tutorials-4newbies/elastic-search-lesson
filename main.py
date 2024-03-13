@@ -23,7 +23,7 @@ my_index_mappings = {
     }
 }
 
-# elastic_client.create_index(index_name=my_name, mappings=my_index_mappings)
+elastic_client.create_index(index_name=my_name, mappings=my_index_mappings)
 
 my_doc = dict(
     name="first name",
