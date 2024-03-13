@@ -6,7 +6,8 @@ class ElasticClient:
     def __init__(self):
         self.elastic_client = Elasticsearch("http://localhost:9200")
         client_info = self.elastic_client.info()
-        pprint(client_info.body)
+        print("Connected to Elasticsearch")
+        # pprint(client_info.body)
 
     def create_index(self, index_name: str, mappings: dict):
         try:

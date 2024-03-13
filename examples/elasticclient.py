@@ -31,6 +31,6 @@ class ElasticClient:
     def retrieve_document(self, index_name: str, document_id: str):
         return self.elastic_client.get(index=index_name, id=document_id)
 
-    def search(self, index_name: str, query_args):
+    def search(self, index_name: str, query_args: dict):
         # https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html
         return self.elastic_client.search(index=index_name, **query_args)
